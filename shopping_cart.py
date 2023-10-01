@@ -28,13 +28,6 @@ def shop_cart():
             price = float(input('Enter a dollar amount: '))
             amount = int(input('How many? '))
             final_price=round(price*amount, 2)
-            for goods, total_amount in cart.items():
-                if option == goods:
-                    amount += int(input('How many of this item do you want to add or remove? \nType a positive number to add, a negative one to remove, or a numeral zero to keep it the same: '))
-                    if amount <= 0:
-                        del cart[goods]
-                else:
-                    final_price=price*amount
             cart[option]=final_price
 
 shop_cart()
