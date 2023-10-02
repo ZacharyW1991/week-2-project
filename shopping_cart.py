@@ -5,8 +5,11 @@ def shop_cart():
         option = input('Enter an item to add to your cart,\n\'list\' to see your items and total do far, \n\'delete\' to remove an item from your list, \nor \'done\' to see your final total: ' )
         #print final receipt
         if option == 'done':
+            final_total = 0
             for goods, total_amount in cart.items():
-                print(f'Your total is: ${total_amount}')
+                final_total+=total_amount
+                round(final_total, 2)
+            print(f'Your total is: ${final_total}')
             return cart
         #see list of items
         elif option == 'list':
